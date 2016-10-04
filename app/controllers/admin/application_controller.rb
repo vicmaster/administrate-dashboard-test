@@ -8,6 +8,7 @@ module Admin
   class ApplicationController < Administrate::ApplicationController
     before_action :authenticate_user!
     before_action :authenticate_admin
+    before_action :set_locale
 
     def authenticate_admin
       redirect_to '/', alert: 'Not authorized.' unless current_user && access?
@@ -17,6 +18,10 @@ module Admin
 
     def access?
       current_user.has_role? :admin
+    end
+
+    def set_locale
+      I18n.locale = params[:locale] || I18n.default_locale
     end
   end
 end

@@ -1,0 +1,30 @@
+<%#
+# Sidebar
+
+This partial is used to display the sidebar in Administrate.
+By default, the sidebar contains navigation links
+for all resources in the admin dashboard,
+as defined by the routes in the `admin/` namespace
+%>
+
+<ul class="sidebar__list">
+  <% Administrate::Namespace.new(namespace).resources.each do |resource| %>
+    <li>
+      <%= link_to(
+        display_resource_name(resource),
+        [namespace, resource],
+        class: "sidebar__link sidebar__link--#{nav_link_state(resource)}"
+      ) %>
+    </li>
+  <% end %>
+  <% if I18n.locale == I18n.default_locale %>
+    <li>
+      <%= link_to I18n.t('administrate.sidebar.language'), params.merge(locale: 'es-MX'), class: "sidebar__link" %>
+    </li>
+  <% else  %>
+    <li>
+      <%= link_to I18n.t('administrate.sidebar.language'),params.merge(locale: 'en'), class: "sidebar__link" %>
+    </li>
+  <% end %>
+  
+</ul>
