@@ -1,5 +1,7 @@
 ---
 es-MX:
+  routes:
+    orders: "ordenes"
   administrate:
     actions:
       confirm: ¿Estás seguro?

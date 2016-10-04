@@ -22,6 +22,7 @@ gem 'administrate',                  '~> 0.2.2'
 gem 'cancancan',                     '~> 1.10'
 gem 'devise',                        '~> 3.5.10'
 gem 'rolify',                        '~> 5.1.0'
+gem 'route_translator',              '~> 4.4.1'
 
 group :development do
   gem 'rails-erd',                   '~> 1.5.0'
