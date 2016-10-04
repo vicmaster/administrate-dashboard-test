@@ -10,6 +10,26 @@ en:
         restrict_dependent_destroy:
           has_one: "Cannot delete record because a dependent %{record} exists"
           has_many: "Cannot delete record because dependent %{record} exist"
+    models:
+      order:
+        one: "Order"
+        other: "Orders"
+      product:
+        one: "Product"
+        other: "Products"
+      user:
+        one: "User"
+        other: "Users"
+      category:
+        one: "Category"
+        other: "Categories"
+    attributes:
+      order:
+        number: "Number"
+        item_total: "Item Total"
+        state: "Estate"
+        completed_at: "Completed at"
+        new: "Nueva Orden"
   date:
     abbr_day_names:
     - Sun
